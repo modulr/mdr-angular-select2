@@ -24,8 +24,8 @@ Several quick start options are available:
 
 - [Download the latest release](https://github.com/Modulr/angular-select2/archive/master.zip)
 - Clone the repo: `git clone https://github.com/Modulr/angular-select2.git`.
-- Install with [Bower](http://bower.io/): `bower install angular-select2`.
-- Install with [npm](https://www.npmjs.com): `npm install angular-select2`.
+- Install with [Bower](http://bower.io/): `bower install angular-mdr-select2`.
+- Install with [npm](https://www.npmjs.com): `npm install angular-mdr-select2`.
 
 ##What's included
 
@@ -91,7 +91,7 @@ All contributions are very welcome, We love it. There are several ways to help o
 
 There are a few guidelines that we need contributors to follow so that we have a chance of keeping on top of things.
 
-If you want to making changes Better avoid working directly on the `master` branch, to avoid conflicts if you pull in updates from origin, so, if make your contribution under the branch [`dev`](https://github.com/Modulr/angular-select2/tree/dev), into folder `docs/src/`.
+If you want to making changes Better avoid working directly on the `master` branch, to avoid conflicts if you pull in updates from origin, so, if make your contribution under the branch [`dev`](https://github.com/Modulr/angular-select2/tree/dev), into folder `src/`.
 
 ##Community
 
