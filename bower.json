@@ -1,0 +1,34 @@
+{
+  "name": "mdr-angular-select2",
+  "version": "1.0.0",
+  "description": "Select2 for angular",
+  "main": "dist/mdr-angule-select2.js",
+  "authors": [
+    "Alfredo Barron"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "modulr",
+    "select",
+    "select2",
+    "angular",
+    "bootstrap",
+    "components",
+    "directive"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.8",
+    "bootstrap": "~3.3.6",
+    "select2": "~4.0.1"
+  }
+}
