@@ -95,7 +95,7 @@ If you want to making changes Better avoid working directly on the `master` bran
 
 ##Community
 
-- Implementation help may be found at Stack Overflow (tagged [`angular-select2`](http://stackoverflow.com/questions/tagged/angular-select2)).
+- Implementation help may be found at Stack Overflow (tagged [`mdr-select2`](http://stackoverflow.com/questions/tagged/mdr-select2)).
 
 ##Creators
 
