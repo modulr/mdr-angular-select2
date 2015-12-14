@@ -1,8 +1,8 @@
 {
   "name": "angular-mdr-select2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Select2 for angular",
-  "main": "dist/angular-select2.js",
+  "main": "dist/mdr-select2.js",
   "authors": [
     "Alfredo Barron"
   ],
@@ -19,12 +19,7 @@
   "moduleType": [],
   "homepage": "",
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests",
-    "src"
+    "**/.*"
   ],
   "dependencies": {
     "angular": "angularjs#~1.4.8",
