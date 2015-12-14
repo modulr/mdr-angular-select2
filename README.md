@@ -32,8 +32,8 @@ Several quick start options are available:
 ```
 angular-select2/
   dist/
-    ├── angular-select2.js
-    └── angular-select2.min.js
+    ├── mdr-select2.js
+    └── mdr-select2.min.js
 ```
 
 ##Documentation
@@ -43,7 +43,7 @@ angular-select2/
 ######Load JS
 
 ```html
-<script href="angular-select2/dist/angular-select2.min.js"></script>
+<script href="angular-select2/dist/mdr-select2.min.js"></script>
 ```
 
 ######Code
@@ -73,9 +73,9 @@ angular.module('MyApp', ['mdr.select2'])
 Attribute | Type | Description
 --- | --- | ---
 url | `string` | *Is the path where you get list of items.*
-src | `array` | *Collection of objects*
+src | `array` | *Collection of objects.*
 options | `string` | *Dynamically generate a list of <option> elements.*
-model | `object` | *Get model selected (Output)*
+model | `object` | *Get model selected (Output).*
 selected | `object` | *Set select value by track (Input).*
 placeholder | `string` | *Text into placeholder.*
 disabled | `boolean` | *If required disable the component is marked as true.*
