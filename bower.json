@@ -1,5 +1,5 @@
 {
-  "name": "angular-mdr-select2",
+  "name": "mdr-angular-select2",
   "version": "1.0.1",
   "description": "Select2 for angular",
   "main": "dist/mdr-select2.js",
