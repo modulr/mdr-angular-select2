@@ -10,56 +10,63 @@
     * @param options {string}
     * @param model {object}
     * @param selected {object}
+    * @param allow-clear {boolean}
     * @param placeholder {string}
     * @param disabled {boolean}
-    * @param required {attribute}
-    * <select2 url="" src="" options="" model="" selected="" placeholder="" disabled="true" required></select2>
+    * @param required {boolean}
     */
     return {
       restrict: 'E',
+      controller: 'mdrSelect2Ctrl',
       scope: {
         url: '@',
         src: '=',
         options: '@',
         model: '=',
         selected: '=',
+        allowClear: '@',
         placeholder: '@',
-        disabled: '='
+        disabled: '=',
+        required: '='
       },
-      controller: 'mdrSelect2Ctrl',
-      template: '<select class="form-control select2" id="selectId_{{$id}}" ng-options="{{options}}" ng-model="model" data-placeholder="{{placeholder}}" ng-disabled="disabled"><option></option></select>'
+      template: '<select class="form-control select2" id="selectId_{{$id}}" ng-options="{{options}}" ng-model="model" ng-disabled="disabled" ng-required="required"><option></option></select>'
     };
   }])
   .controller('mdrSelect2Ctrl', ['$scope', '$element', '$attrs', 'mdrSelect2Service', function($scope, $element, $attrs, mdrSelect2Service){
 
-    $scope.placeholder = 'Seleccionar';
+    $scope.placeholder = 'Select';
+    $scope.allowClear = false;
 
-    init();
+    initialize();
 
     // Cuando cambia url se cargan los datos
     $scope.$watch('url', function(newValue, oldValue)
     {
       if(newValue !== undefined){
-        loadCollection(newValue);
+        //loadCollection(newValue);
+        var options = getOptions();
+        mdrSelect2Service.find(newValue)
+        .then(function (data) {
+          $scope[options.collection] = data;
+          initialize();
+          // Si cambia selected se selecciona el nuevo modelo
+          if($scope.selected !== undefined){
+            selected($scope.selected);
+          }
+        });
       }
     });
     // Cuando cambia src se cargan los datos
-    $scope.$watch('src', function(newValue, oldValue)
+    $scope.$watchCollection('src', function(newValue, oldValue)
     {
       if(newValue !== undefined){
         var options = getOptions();
         $scope[options.collection] = newValue;
+        initialize();
         // Si cambia selected se selecciona el nuevo modelo
         if($scope.selected !== undefined){
           selected($scope.selected);
         }
-      }
-    });
-    // Cuando cambia selected se selecciona el nuevo modelo
-    $scope.$watch('selected', function(newValue, oldValue)
-    {
-      if(newValue !== undefined){
-        selected(newValue);
       }
     });
     // Cuando cambia selected se selecciona el nuevo modelo
@@ -73,30 +80,22 @@
         }
       }
     });
+    // Cuando cambia selected se selecciona el nuevo modelo
+    $scope.$watch('selected', function(newValue, oldValue)
+    {
+      if(newValue !== undefined){
+        selected(newValue);
+      }
+    });
     // Se crea el metodo que inicializa el select2
-    function init()
+    function initialize()
     {
       setTimeout(function() {
-        $("#selectId_" + $scope.$id).select2();
+        $("#selectId_" + $scope.$id).select2({
+          placeholder: $scope.placeholder,
+          allowClear: $scope.allowClear
+        });
       },0);
-      // Si la directiva contiene el attr required se agrega el attr required al select
-      if($attrs.required !== undefined){
-        $("#selectId_" + $scope.$id).attr('required','required');
-      }
-    }
-    // Se crea el metodo que trae la coleccion del api
-    function loadCollection(url)
-    {
-      var options = getOptions();
-      mdrSelect2Service.find(url)
-      .then(function (data) {
-        $scope[options.collection] = data;
-        init();
-        // Si cambia selected se selecciona el nuevo modelo
-        if($scope.selected !== undefined){
-          selected($scope.selected);
-        }
-      });
     }
     // Selecciona el model(ng-model) y el val en el select2
     function selected(value)

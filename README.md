@@ -8,7 +8,8 @@ Angular Select2 is an Angularjs component that can replacement for select boxes.
 ##Features
 
 - Uses the native Angularjs scope for data binding
-- Remote data support
+- Fast and lightweight
+- Remote and local data support
 - Big data support
 
 
@@ -63,7 +64,7 @@ angular.module('MyApp', ['mdr.select2'])
 > Complete Directive (All attributes)
 
 ```html
-<select2 src="collection" options="item.estate group by item.zone for item in collection | orderBy:'item' track by item.id" model="model" selected="value" placeholder="Seleccionar" disabled="true" required></select2>
+<select2 src="collection" options="item.estate group by item.zone for item in collection | orderBy:'item' track by item.id" model="model" selected="value" placeholder="Seleccionar" allow-clear="true" disabled="true" required="true"></select2>
 ```
 
 ####API
@@ -77,8 +78,10 @@ src | `array` | *Collection of objects.*
 options | `string` | *Dynamically generate a list of <option> elements.*
 model | `object` | *Get model selected (Output).*
 selected | `object` | *Set select value by track (Input).*
+allow-clear | `boolean` | *If required clear selection the component is marked as true.*
 placeholder | `string` | *Text into placeholder.*
 disabled | `boolean` | *If required disable the component is marked as true.*
+required | `boolean` | *If is required the component is marked as true.*
 
 ##How to contribute
 
