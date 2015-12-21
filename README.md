@@ -1,9 +1,9 @@
 # Angular Select2
 Angular Select2 is an Angularjs component that can replacement for select boxes.
 
-- [Demo](http://modulr.io/components/angular-select2/)
+- [Demo](http://modulr.io/components/mdr-angular-select2/)
 
-![](http://modulr.io/img/preview/angular-select2.png)
+![](http://modulr.io/img/preview/mdr-angular-select2.png)
 
 ##Features
 
@@ -23,15 +23,15 @@ Angular Select2 is an Angularjs component that can replacement for select boxes.
 
 Several quick start options are available:
 
-- [Download the latest release](https://github.com/Modulr/angular-select2/archive/master.zip)
-- Clone the repo: `git clone https://github.com/Modulr/angular-select2.git`.
+- [Download the latest release](https://github.com/Modulr/mdr-angular-select2/archive/master.zip)
+- Clone the repo: `git clone https://github.com/Modulr/mdr-angular-select2.git`.
 - Install with [Bower](http://bower.io/): `bower install mdr-angular-select2`.
 - Install with [npm](https://www.npmjs.com): `npm install mdr-angular-select2`.
 
 ##What's included
 
 ```
-angular-select2/
+mdr-angular-select2/
   dist/
     ├── mdr-select2.js
     └── mdr-select2.min.js
@@ -44,7 +44,7 @@ angular-select2/
 ######Load JS
 
 ```html
-<script href="angular-select2/dist/mdr-select2.min.js"></script>
+<script href="mdr-angular-select2/dist/mdr-select2.min.js"></script>
 ```
 
 ######Code
@@ -64,7 +64,7 @@ angular.module('MyApp', ['mdr.select2'])
 > Complete Directive (All attributes)
 
 ```html
-<select2 src="collection" options="item.estate group by item.zone for item in collection | orderBy:'item' track by item.id" model="model" selected="value" placeholder="Seleccionar" allow-clear="true" disabled="true" required="true"></select2>
+<mdr-select2 src="collection" options="item.estate group by item.zone for item in collection | orderBy:'item' track by item.id" model="model" selected="value" placeholder="Seleccionar" allow-clear="true" disabled="true" required="true"></mdr-select2>
 ```
 
 ####API
@@ -87,14 +87,14 @@ required | `boolean` | *If is required the component is marked as true.*
 
 All contributions are very welcome, We love it. There are several ways to help out:
 
-- Create an [issue](https://github.com/Modulr/angular-select2/issues) on GitHub, if you have found a bug
+- Create an [issue](https://github.com/Modulr/mdr-angular-select2/issues) on GitHub, if you have found a bug
 - Write test cases for open bug issues
 - Write patches for open bug/feature issues, preferably with test cases included
 - Contribute to the documentation
 
 There are a few guidelines that we need contributors to follow so that we have a chance of keeping on top of things.
 
-If you want to making changes Better avoid working directly on the `master` branch, to avoid conflicts if you pull in updates from origin, so, if make your contribution under the branch [`dev`](https://github.com/Modulr/angular-select2/tree/dev), into folder `src/`.
+If you want to making changes Better avoid working directly on the `master` branch, to avoid conflicts if you pull in updates from origin, so, if make your contribution under the branch [`dev`](https://github.com/Modulr/mdr-angular-select2/tree/dev), into folder `src/`.
 
 ##Community
 
@@ -106,4 +106,4 @@ If you want to making changes Better avoid working directly on the `master` bran
 
 ## Copyright and license
 
-Code and documentation (c) Copyright 2015 Modulr. Code published under [license MIT](https://github.com/Modulr/angular-select2/blob/dev/LICENSE)
+Code and documentation (c) Copyright 2015 Modulr. Code published under [license MIT](https://github.com/Modulr/mdr-angular-select2/blob/master/LICENSE)
