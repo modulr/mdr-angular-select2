@@ -43,16 +43,26 @@
     $scope.$watch('url', function(newValue, oldValue)
     {
       if(newValue !== undefined){
-        //loadCollection(newValue);
+
         var options = getOptions();
+        $scope[options.collection] = [];
+        setPlaceholder('Loading...');
+
         mdrSelect2Service.find(newValue)
         .then(function (data) {
-          $scope[options.collection] = data;
-          initialize();
-          // Si cambia selected se selecciona el nuevo modelo
-          if($scope.selected !== undefined){
-            selected($scope.selected);
+          if (data.length <= 0 || data.length === undefined){
+              setPlaceholder('No results found');
+          } else {
+            $scope[options.collection] = data;
+            initialize();
+            // Si cambia selected se selecciona el nuevo modelo
+            if($scope.selected !== undefined){
+              selected($scope.selected);
+            }
           }
+        })
+        .catch(function (error) {
+          setPlaceholder('No results found');
         });
       }
     });
@@ -72,12 +82,15 @@
     // Cuando cambia selected se selecciona el nuevo modelo
     $scope.$watch('model', function(newValue, oldValue)
     {
-      if(newValue !== undefined && newValue !== null){
-        if(Object.keys(newValue).length === 0){
-          setTimeout(function() {
-            $("#selectId_" + $scope.$id).val(null).trigger("change");
-          },0);
-        }
+      // if(newValue !== undefined && newValue !== null){
+      //   if(Object.keys(newValue).length === 0){
+      //     setTimeout(function() {
+      //       $("#selectId_" + $scope.$id).val(null).trigger("change");
+      //     },0);
+      //   }
+      // }
+      if(newValue === undefined || newValue === null){
+        $scope.model = {};
       }
     });
     // Cuando cambia selected se selecciona el nuevo modelo
@@ -94,6 +107,15 @@
         $("#selectId_" + $scope.$id).select2({
           placeholder: $scope.placeholder,
           allowClear: $scope.allowClear
+        });
+      },0);
+    }
+    // Se crea el metodo que cambia el placeholder del select2
+    function setPlaceholder(placeholder)
+    {
+      setTimeout(function() {
+        $("#selectId_" + $scope.$id).select2({
+          placeholder: placeholder
         });
       },0);
     }
