@@ -1,6 +1,6 @@
 {
   "name": "mdr-angular-select2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Select2 for angular",
   "main": "index.js",
   "scripts": {
