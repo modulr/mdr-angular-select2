@@ -55,10 +55,7 @@
           } else {
             $scope[options.collection] = data;
             initialize();
-            // Si cambia selected se selecciona el nuevo modelo
-            if($scope.selected !== undefined){
-              selected($scope.selected);
-            }
+            selected($scope.selected);
           }
         })
         .catch(function (error) {
@@ -73,32 +70,24 @@
         var options = getOptions();
         $scope[options.collection] = newValue;
         initialize();
-        // Si cambia selected se selecciona el nuevo modelo
-        if($scope.selected !== undefined){
-          selected($scope.selected);
-        }
+        selected($scope.selected);
       }
     });
-    // Cuando cambia selected se selecciona el nuevo modelo
+    // Cuando cambia model
     $scope.$watch('model', function(newValue, oldValue)
     {
-      // if(newValue !== undefined && newValue !== null){
-      //   if(Object.keys(newValue).length === 0){
-      //     setTimeout(function() {
-      //       $("#selectId_" + $scope.$id).val(null).trigger("change");
-      //     },0);
-      //   }
-      // }
+      // Se inicializa el modelo
       if(newValue === undefined || newValue === null){
         $scope.model = {};
+        setTimeout(function() {
+          $("#selectId_" + $scope.$id).val('').trigger('change.select2');
+        },0);
       }
     });
-    // Cuando cambia selected se selecciona el nuevo modelo
+    // Cuando cambia selected se manda llamar la funcion selected
     $scope.$watch('selected', function(newValue, oldValue)
     {
-      if(newValue !== undefined){
-        selected(newValue);
-      }
+      selected(newValue);
     });
     // Se crea el metodo que inicializa el select2
     function initialize()
@@ -122,16 +111,18 @@
     // Selecciona el model(ng-model) y el val en el select2
     function selected(value)
     {
-      var options = getOptions();
-      angular.forEach($scope[options.collection], function(val, key){
-        if(value == val[options.track]){
-          $scope.model = val;
-          setTimeout(function() {
-            $("#selectId_" + $scope.$id).val(value).trigger("change");
-          },0);
-          return false;
-        }
-      });
+      if(value !== undefined){
+        var options = getOptions();
+        angular.forEach($scope[options.collection], function(val, key){
+          if(value == val[options.track]){
+            $scope.model = val;
+            setTimeout(function() {
+              $("#selectId_" + $scope.$id).val(value).trigger("change");
+            },0);
+            return false;
+          }
+        });
+      }
     }
     // Se crea el metodo que obtiene el nombre de la coleccion de options
     function getOptions()
