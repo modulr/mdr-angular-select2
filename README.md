@@ -5,7 +5,7 @@ Angular Select2 is an Angularjs component that can replacement for select boxes.
 
 ![](http://modulr.io/img/preview/mdr-angular-select2.png)
 
-##Features
+## Features
 
 - Uses the native Angularjs scope for data binding
 - Fast and lightweight
@@ -13,13 +13,13 @@ Angular Select2 is an Angularjs component that can replacement for select boxes.
 - Big data support
 
 
-##Requirements
+## Requirements
 
 - [Angularjs](https://angularjs.org/)
 - [Bootstrap 3.](http://getbootstrap.com/)
 - [Selec2.](https://select2.github.io/)
 
-##Quick start
+## Quick start
 
 Several quick start options are available:
 
@@ -28,7 +28,7 @@ Several quick start options are available:
 - Install with [Bower](http://bower.io/): `bower install mdr-angular-select2`.
 - Install with [npm](https://www.npmjs.com): `npm install mdr-angular-select2`.
 
-##What's included
+## What's included
 
 ```
 mdr-angular-select2/
@@ -37,23 +37,23 @@ mdr-angular-select2/
     └── mdr-select2.min.js
 ```
 
-##Documentation
+## Documentation
 
-####Usage
+### Usage
 
-######Load JS
+##### Load JS
 
 ```html
 <script href="mdr-angular-select2/dist/mdr-select2.min.js"></script>
 ```
 
-######Code
+##### Code
 
 ```js
 angular.module('MyApp', ['mdr.select2'])
 ```
 
-######HTML View or Templates
+##### HTML View or Templates
 
 > Basic Directive
 
@@ -67,9 +67,9 @@ angular.module('MyApp', ['mdr.select2'])
 <mdr-select2 src="collection" options="item.estate group by item.zone for item in collection | orderBy:'item' track by item.id" model="model" selected="value" placeholder="Seleccionar" allow-clear="true" disabled="true" required="true"></mdr-select2>
 ```
 
-####API
+### API
 
-######Attributes
+##### Attributes
 
 Attribute | Type | Description
 --- | --- | ---
@@ -83,7 +83,7 @@ placeholder | `string` | *Text into placeholder.*
 disabled | `boolean` | *If required disable the component is marked as true.*
 required | `boolean` | *If is required the component is marked as true.*
 
-##How to contribute
+## How to contribute
 
 All contributions are very welcome, We love it. There are several ways to help out:
 
@@ -96,11 +96,11 @@ There are a few guidelines that we need contributors to follow so that we have a
 
 If you want to making changes Better avoid working directly on the `master` branch, to avoid conflicts if you pull in updates from origin, so, if make your contribution under the branch [`dev`](https://github.com/Modulr/mdr-angular-select2/tree/dev), into folder `src/`.
 
-##Community
+## Community
 
 - Implementation help may be found at Stack Overflow (tagged [`mdr-select2`](http://stackoverflow.com/questions/tagged/mdr-select2)).
 
-##Creators
+## Creators
 
 [@AlfredoBarronC](https://twitter.com/AlfredoBarronC)
 
