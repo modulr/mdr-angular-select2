@@ -1,7 +1,6 @@
 # Angular Select2
 Angular Select2 is an Angularjs component that can replacement for select boxes.
 
-- [Demo](http://modulr.io/components/mdr-angular-select2/)
 
 ![](http://modulr.io/img/preview/mdr-angular-select2.png)
 
